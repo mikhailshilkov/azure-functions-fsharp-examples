@@ -1,0 +1,13 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": ["get"],
+      "authLevel": "anonymous",
+      "name": "req",
+      "route": "precompiled"
+    }
+  ],
+  "scriptFile": "../bin/PrecompiledApp.dll",
+  "entryPoint": "PrecompiledApp.PrecompiledHttp.run"
+}

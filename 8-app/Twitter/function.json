@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "type": "queueTrigger",
+      "queueName": "tweets",
+      "name": "tweet"
+    },
+    {
+      "type": "queue",
+      "name": "pollResults",
+      "queueName": "poll-item",
+      "direction": "out"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/PollApp.dll",
+  "entryPoint": "PollApp.Twitter.run"
+}

@@ -1,0 +1,19 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": ["post"],
+      "authLevel": "anonymous",
+      "name": "req",
+      "route": "send"
+    },
+    {
+      "type": "queue",
+      "name": "pollResults",
+      "queueName": "poll-item",
+      "direction": "out"
+    }
+  ],
+  "scriptFile": "../bin/PollApp.dll",
+  "entryPoint": "PollApp.Send.run"
+}

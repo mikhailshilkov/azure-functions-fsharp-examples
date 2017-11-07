@@ -1,0 +1,22 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": [
+        "get",
+        "options"
+      ],
+      "authLevel": "anonymous",
+      "name": "req"
+    },
+    {
+      "type": "table",
+      "name": "resultsTable",
+      "tableName": "Sentiment",
+      "direction": "in"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/PollApp.dll",
+  "entryPoint": "PollApp.Results.run"
+}
