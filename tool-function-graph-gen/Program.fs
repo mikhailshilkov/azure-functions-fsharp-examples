@@ -118,6 +118,7 @@ let bindingDescription (functionName: string, binding:Binding) =
     match binding.Type with
     | "timer" -> "Timer"
     | "queue" -> "Queue " + (binding.Properties.["queueName"])
+    | "table" -> "Table " + (binding.Properties.["tableName"])
     | "blob" -> "Blob " + (binding.Properties.["path"])
     | "http" -> "HTTP /" + functionName
     | _ -> binding.Type

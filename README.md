@@ -1,6 +1,6 @@
 # Azure Functions in F#
 
-Examples of Azure Functions written F#. Created for demos at 
+Examples of Azure Functions written in F#. Created for demos at 
 [FSharping meetup](https://www.meetup.com/FSharping/events/244137693/).
 
 ### Prerequisites
@@ -14,7 +14,7 @@ F# support seems not optimal there)
 
 - Azure Storage Explorer for working with Blobs, Queues and Tables
 
-### 1. Function App Created in the Portal
+## 1. Function App Created in the Portal
 
 Go to Azure Portal, click `New` button and search for Function App. Click through the wizard 
 to create a new Function App.
@@ -31,7 +31,7 @@ Explore `function.json` file and its syntax for trigger definition.
 Explore the portal functionality around Functions.
 
 
-### 2. HTTP Function Created in the Portal
+## 2. HTTP Function Created in the Portal
 
 Create another function in the same app, this time use `HttpTrigger F#` template. Explore different 
 available templates while doing so.
@@ -51,7 +51,7 @@ Note how function is defined in small-case `run`, and that it's in curried form.
 Functions, but not required.
 
 
-### 3. HTTP Function Templating HTML from Blob Storage
+## 3. HTTP Function Templating HTML from Blob Storage
 
 Follow the same steps to create yet another F# HTTP function, but use files from `3-portal-http-html`
 folder.
@@ -69,7 +69,7 @@ define HTTP route for the trigger, and templated Blob input binding. See how the
 them together.
 
 
-### 4. Function Created with CLI
+## 4. Function Created with CLI
 
 Azure Portal is great to get started, but it's not the most developer-friendly way to write code.
 Instead, we will create all the remaining functions locally on dev machine, and deploy it to Azure
@@ -133,7 +133,7 @@ open Microsoft.Azure.WebJobs.Host
 Make sure errors are gone from VS Code.
 
 
-### 5. Precompiled Function
+## 5. Precompiled Function
 
 Scripts are nice for dynamic exploration, but I prefer precompiled libraries for more complex
 applications. The same applies to Azure Functions: you can deploy normal Class Libraries as 
@@ -182,7 +182,7 @@ When you are ready, publish your Function to Azure by running
 func azure functionapp publish <your-existing-app-name>
 ```
 
-### 6. Suave Function
+## 6. Suave Function
 
 What can we do with precompiled functions? Well, we can do a lot, for example use our favourite
 F# libraries.
@@ -209,7 +209,7 @@ Run the application and request a URL `http://localhost:7071/api/suave/hello` to
 This sample is very simple, but you can do lots of powerful stuff with Suave!
 
 
-### 7. Atrribute-Based Functions
+## 7. Atrribute-Based Functions
 
 Up until now, we were writing `function.json` files manually for each function. This is not very
 tedious, but error prone. There is an alternative programming model where these files are 
@@ -233,6 +233,39 @@ the function as usual.
 Make sure that everything still works by executing `run` task in Code.
 
 
-### 8-9. Demo App
+## 8-9. Demo App
+
+The final demo is a sample application that consists of 5 Azure Functions:
+
+- **`Landing`** is HTTP GET function which returns an HTML page with a form. User can fill this
+form to submit their review of the meetup. The review is then posted to `Send` function.
+
+- **`Send`** is HTTP POST function that accepts the review text from user's form and puts it
+into `poll-item` queue
+
+- **Twitter** function pulls items from a Storage Queue with twitter-submitted feedback. The
+queue is populated by an Azure Logic App which is not part of this repository (there's no code
+there, it just listens to a Twitter hashtag). The function then also puts the feedback to
+`poll-item` queue
+
+- **Sentiment** function receives messages from `poll-item` queue, then calls Azure Cognitive
+Services to get a sentiment score of the message (from 0.0 to 1.0). It then saves the text
+and the score into Table Storage
+
+- **Result** function reads all the feedback from Table Storage, calculates an average score
+and retrieves all the data as JSON
+
+The inteconnection of these functions is shown on the following chart:
 
 ![App Function Graph](/8-app/FunctionGraph.png)
+
+The cool thing about this chart is the fact that it was auto-generated based on `function.json`
+files of Azure Functions in `8-app` folder. The tool to generate such chart is in 
+`tool-function-graph-gen` folder and is based on the [script](https://gist.github.com/mathias-brandewinder/cdd1e0d23bd3047ffe438d48689b2b86)
+from [Mathias Brandewinder](http://brandewinder.com/2017/04/01/azure-function-app-diagram/).
+The tool generates a text file in GraphViz format, which can be visualized by multiple tools,
+e.g. at [WebGraphviz](http://www.webgraphviz.com).
+
+`9-app` is the same application, but implemented with attribute-based approach instead of
+manually created `function.json` files. It's less work to do manually, but it can't be used
+for graph generation directly.
