@@ -1,0 +1,6 @@
+source https://www.nuget.org/api/v2
+
+framework: >= netstandard2.0
+nuget FSharp.Core
+nuget Microsoft.NET.Sdk.Functions
+nuget Microsoft.AspNetCore.Mvc.Core

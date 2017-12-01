@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "timer",
+      "type": "timerTrigger",
+      "schedule": "0 * * * * *"
+    }
+  ],
+  "scriptFile": "../bin/HelloFunctions.dll",
+  "entryPoint": "HelloFunctions.Say.hello"
+}

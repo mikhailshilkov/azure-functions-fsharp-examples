@@ -1,0 +1,13 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": ["get"],
+      "authLevel": "anonymous",
+      "name": "req",
+      "route": "paket"
+    }
+  ],
+  "scriptFile": "../bin/PaketFunctions.dll",
+  "entryPoint": "PaketFunctions.PaketHttp.run"
+}

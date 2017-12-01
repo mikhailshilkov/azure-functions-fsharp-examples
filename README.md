@@ -182,7 +182,11 @@ When you are ready, publish your Function to Azure by running
 func azure functionapp publish <your-existing-app-name>
 ```
 
-## 6. Suave Function
+## 6. Precompiled Timer
+
+Just another example of a precompiled function, this time with Timer trigger.
+
+## 7. Suave Function
 
 What can we do with precompiled functions? Well, we can do a lot, for example use our favourite
 F# libraries.
@@ -208,8 +212,27 @@ Run the application and request a URL `http://localhost:7071/api/suave/hello` to
 
 This sample is very simple, but you can do lots of powerful stuff with Suave!
 
+## 8. Paket
 
-## 7. Atrribute-Based Functions
+Once your Function App becomes bigger and you start using multiple F# 
+projects, it makes sense to switch to Paket package manager.
+
+It is totally possible to use 
+[Paket](https://fsprojects.github.io/Paket/) 
+with Azure Functions. There isn't 
+much specific to Azure Functions, really. Here is an example of 
+`paket.dependecies` file
+
+```
+source https://www.nuget.org/api/v2
+
+framework: >= netstandard2.0
+nuget FSharp.Core
+nuget Microsoft.NET.Sdk.Functions
+nuget Microsoft.AspNetCore.Mvc.Core
+```
+
+## 9. Atrribute-Based Functions
 
 Up until now, we were writing `function.json` files manually for each function. This is not very
 tedious, but error prone. There is an alternative programming model where these files are 
@@ -233,7 +256,7 @@ the function as usual.
 Make sure that everything still works by executing `run` task in Code.
 
 
-## 8-9. Demo App
+## 10-11. Demo App
 
 The final demo is a sample application that consists of 5 Azure Functions:
 

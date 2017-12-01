@@ -1,0 +1,19 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": ["get"],
+      "authLevel": "anonymous",
+      "name": "req",
+      "route": "poll"
+    },
+    {
+      "type": "blob",
+      "name": "html",
+      "path": "fsharping/poll.html",
+      "direction": "in"
+    }
+  ],
+  "scriptFile": "../bin/PollApp.dll",
+  "entryPoint": "PollApp.Landing.run"
+}
