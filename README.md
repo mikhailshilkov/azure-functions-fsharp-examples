@@ -280,7 +280,7 @@ and retrieves all the data as JSON
 
 The inteconnection of these functions is shown on the following chart:
 
-![App Function Graph](/8-app/FunctionGraph.png)
+![App Function Graph](/10-app/FunctionGraph.png)
 
 The cool thing about this chart is the fact that it was auto-generated based on `function.json`
 files of Azure Functions in `8-app` folder. The tool to generate such chart is in 
