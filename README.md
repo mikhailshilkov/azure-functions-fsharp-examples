@@ -182,6 +182,9 @@ When you are ready, publish your Function to Azure by running
 func azure functionapp publish <your-existing-app-name>
 ```
 
+`5-precompiled-full-framework` shows the same example but targeting full .NET 4.6.2 framework rather
+than .NET Standard 2.0.
+
 ## 6. Precompiled Timer
 
 Just another example of a precompiled function, this time with Timer trigger.
@@ -283,12 +286,12 @@ The inteconnection of these functions is shown on the following chart:
 ![App Function Graph](/10-app/FunctionGraph.png)
 
 The cool thing about this chart is the fact that it was auto-generated based on `function.json`
-files of Azure Functions in `8-app` folder. The tool to generate such chart is in 
+files of Azure Functions in `10-app` folder. The tool to generate such chart is in 
 `tool-function-graph-gen` folder and is based on the [script](https://gist.github.com/mathias-brandewinder/cdd1e0d23bd3047ffe438d48689b2b86)
 from [Mathias Brandewinder](http://brandewinder.com/2017/04/01/azure-function-app-diagram/).
 The tool generates a text file in GraphViz format, which can be visualized by multiple tools,
 e.g. at [WebGraphviz](http://www.webgraphviz.com).
 
-`9-app` is the same application, but implemented with attribute-based approach instead of
+`11-app-attributes` is the same application, but implemented with attribute-based approach instead of
 manually created `function.json` files. It's less work to do manually, but it can't be used
 for graph generation directly.
