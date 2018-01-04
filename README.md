@@ -235,7 +235,7 @@ nuget Microsoft.NET.Sdk.Functions
 nuget Microsoft.AspNetCore.Mvc.Core
 ```
 
-## 9. Atrribute-Based Functions
+## 9. Attribute-Based Functions
 
 Up until now, we were writing `function.json` files manually for each function. This is not very
 tedious, but error prone. There is an alternative programming model where these files are 
