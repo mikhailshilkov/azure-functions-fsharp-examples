@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="PrecompiledHttp\PrecompiledHttp.fs" />
   </ItemGroup>
 

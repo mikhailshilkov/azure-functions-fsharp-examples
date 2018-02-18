@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TaskBuilder.fs" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.DurableTask" Version="1.1.0-beta2" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Twilio" Version="3.0.0-beta4" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="HttpStart.fs" />
+    <Compile Include="HelloSequence.fs" />
+    <Compile Include="BackupSiteContent.fs" />
+    <Compile Include="Counter.fs" />
+    <Compile Include="PhoneVerification.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
