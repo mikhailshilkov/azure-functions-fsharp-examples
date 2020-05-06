@@ -189,7 +189,7 @@ than .NET Standard 2.0.
 
 Just another example of a precompiled function, this time with Timer trigger.
 
-## 6. Precompiled HTTP to Service Bus topic function
+## 6b. Precompiled HTTP to Service Bus topic function
 
 And yet another example of a precompiled function, this time with an HTTP trigger and an output binding to an Azure Service Bus topic.
 
