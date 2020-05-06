@@ -189,6 +189,10 @@ than .NET Standard 2.0.
 
 Just another example of a precompiled function, this time with Timer trigger.
 
+## 6. Precompiled HTTP to Service Bus topic function
+
+And yet another example of a precompiled function, this time with an HTTP trigger and an output binding to an Azure Service Bus topic.
+
 ## 7. Suave Function
 
 What can we do with precompiled functions? Well, we can do a lot, for example use our favourite

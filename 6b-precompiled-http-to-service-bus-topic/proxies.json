@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "TriageEvents Proxy": {
+            "matchCondition": {
+                "methods": [ "POST" ],
+                "route": "/events"
+            },
+            "backendUri": "%WEB_HOST%/api/TriageEvents"
+        }
+    }
+}

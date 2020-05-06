@@ -1,0 +1,3 @@
+Sample Azure Function (V3) written in F# that triggers based on a HTTP request and publishes a message to an `Azure Service Bus topic` through [output bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus-output?tabs=csharp).
+The function also uses the [Azure Function Proxies](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies) functionality.
+See the `proxies.json` file for more details. You can refer to app settings by using the `%MY-APP-SETTING-KEY%` syntax.
