@@ -4,9 +4,9 @@
         "TriageEvents Proxy": {
             "matchCondition": {
                 "methods": [ "POST" ],
-                "route": "/events"
+                "route": "/my-proxy-url"
             },
-            "backendUri": "%WEB_HOST%/api/TriageEvents"
+            "backendUri": "%WEB_HOST%/api/FromHttpTriggerToServiceBusTopic"
         }
     }
 }
