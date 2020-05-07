@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/proxies",
     "proxies": {
-        "TriageEvents Proxy": {
+        "FromHttpTriggerToServiceBusTopic Proxy": {
             "matchCondition": {
                 "methods": [ "POST" ],
                 "route": "/my-proxy-url"
