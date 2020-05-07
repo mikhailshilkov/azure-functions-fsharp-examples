@@ -1,0 +1,9 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+        "WEB_HOST": "http://localhost:7071",
+        "ServiceBusConnectionString": "Endpoint=sb://the-rest-of-your-service-bus-connection-string-with-shared-access-key-goes-here"
+    }
+}

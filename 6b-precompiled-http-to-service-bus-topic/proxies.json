@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+        "FromHttpTriggerToServiceBusTopic Proxy": {
+            "matchCondition": {
+                "methods": [ "POST" ],
+                "route": "/my-proxy-url"
+            },
+            "backendUri": "%WEB_HOST%/api/FromHttpTriggerToServiceBusTopic"
+        }
+    }
+}
